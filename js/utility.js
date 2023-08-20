@@ -1,3 +1,8 @@
+// to select by id
+function select(elementId) {
+    return document.getElementById(elementId);
+}
+
 // get inner text and make number
 function textNumber(textId) {
     const textElement = document.getElementById(textId);
@@ -12,6 +17,16 @@ function setText(locationId, newText) {
     const targetElement = document.getElementById(locationId);
 
     targetElement.innerText = newText;
+}
+
+// set innerHTML
+function setHtml(appendChildId, htmlCode) {
+    const element = document.getElementById(appendChildId);
+    if (element) {
+        const newElement = document.createElement('p');
+        newElement.innerHTML = htmlCode;
+        element.appendChild(newElement);
+    }
 }
 
 // to sum
