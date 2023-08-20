@@ -165,7 +165,7 @@ document.getElementById(product6).addEventListener('click', function () {
 });
 
 // to fixed
-function toDecimal() {
+function toDecimal(totalNumber) {
     const preTotalPrice = textNumber(totalPriceId);
     const totalPrice = preTotalPrice.toFixed(2);
     setText(totalPriceId, totalPrice);
@@ -206,8 +206,24 @@ function purEnable() {
 
     if (totalNumber > 0) {
         removeClass('purchase-btn', 'disabled-link');
+        return totalNumber;
     }
 }
+
+// to fixed after reload (using help from INTERNET)
+// Code to execute before page reload
+window.addEventListener('beforeunload', function () {
+    localStorage.setItem('reloadInProgress', 'true');
+});
+
+// Code to execute after page reload
+document.addEventListener('DOMContentLoaded', function () {
+    if (localStorage.getItem('reloadInProgress') === 'true') {
+        localStorage.removeItem('reloadInProgress');
+        // Action
+        toDecimal();
+    }
+});
 
 document.getElementById('pur-enable').addEventListener('click', function () {
     purEnable();
