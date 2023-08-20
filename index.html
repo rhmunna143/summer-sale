@@ -71,7 +71,7 @@
         <!-- products section -->
         <section class="bg-back my-12">
             <!-- products and cart container -->
-            <div class="lg:w-10/12 mx-auto">
+            <div class="lg:w-10/12 mx-auto flex flex-col gap-8 lg:flex-row">
                 <!-- products cont -->
                 <div class="">
                     <!-- products row 1 -->
@@ -236,23 +236,32 @@
                 </div>
 
                 <!-- cart container -->
-                <div>
+                <div class="order-1">
                     <!-- for coupons -->
-                    <div>
-                        <h4 class="text-lg font-medium">Have Coupon?</h4>
-                        
+                    <div class="bg-white p-3 rounded-md mt-16">
+                        <h4 class="text-lg font-medium mb-2">Have Coupon?</h4>
+                        <div class="flex">
+                            <input type="text" placeholder="Coupon code" class="px-4 py-1 w-40 border border-slate-300 rounded-l-md" id="coupon-code">
+                            <button class="bg-primary text-white px-4 py-1 rounded-r-md" id="coupon-apply-btn">Apply</button>
+                        </div>
                     </div>
 
                     <!-- for cart -->
-                    <div>
+                    <div class="bg-white p-3 rounded-md mt-4">
                         <!-- products list -->
-                        <div>
+                        <div id="cart-list">
+                            <!-- will inserted by js -->
+
 
                         </div>
 
+                        <hr>
+
                         <!-- cart calculations -->
                         <div>
-
+                            <p class="text-lg font-medium my-1">Total price: <span class="font-normal text-primary" id="">00</span><span class="font-normal text-primary">TK</span></p>
+                            <p class="text-lg font-medium my-1">Total price: <span class="font-normal text-primary" id="">00</span><span class="font-normal text-primary">TK</span></p>
+                            <p class="text-lg font-medium my-1">Total price: <span class="font-normal text-primary" id="">00</span><span class="font-normal text-primary">TK</span></p>
                         </div>
                     </div>
                 </div>
