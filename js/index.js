@@ -28,15 +28,6 @@ document.getElementById('coupon-code').addEventListener('keyup', function (event
     }
 });
 
-function purchaseEnable() {
-    removeClass('purchase-btn', 'disabled-link');
-} //for cart
-
-
-if (cartTotal > 0) {
-    purchaseEnable();
-}
-
 // for product 1
 const product = 'product';
 
@@ -171,4 +162,53 @@ document.getElementById(product6).addEventListener('click', function () {
     const currentTotalPrice = toSum(preTotalPrice, itmPrice);
     setText(totalPriceId, currentTotalPrice);
     setText(totalId, currentTotalPrice);
+});
+
+// to fixed
+function toDecimal() {
+    const preTotalPrice = textNumber(totalPriceId);
+    const totalPrice = preTotalPrice.toFixed(2);
+    setText(totalPriceId, totalPrice);
+
+    const preDiscount = textNumber(discountId);
+    const discount = preDiscount.toFixed(2);
+    setText(discountId, discount);
+
+    const preTotal = textNumber(totalId);
+    const total = preTotal.toFixed(2);
+    setText(totalId, total);
+
+
+    if (totalNumber > 0) {
+        removeClass('purchase-btn', 'disabled-link');
+    }
+}
+
+// coupon discount
+document.getElementById('coupon-apply-btn').addEventListener('click', function () {
+    const totalPrice = textNumber(totalPriceId);
+    const discount = totalPrice * 0.2;
+
+    if (totalPrice > 200) {
+        const total = totalPrice - discount;
+        setText(discountId, discount);
+        setText(totalId, total);
+
+        toDecimal();
+    }
+});
+
+// purchase enable
+function purEnable() {
+    const preTotal = textNumber(totalId);
+    const total = preTotal.toFixed(2);
+    const totalNumber = parseFloat(total);
+
+    if (totalNumber > 0) {
+        removeClass('purchase-btn', 'disabled-link');
+    }
+}
+
+document.getElementById('pur-enable').addEventListener('click', function () {
+    purEnable();
 });
