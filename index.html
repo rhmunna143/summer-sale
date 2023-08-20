@@ -39,6 +39,13 @@
         .font-work-sans {
             font-family: 'Work Sans', sans-serif;
         }
+
+        .disabled-link {
+            pointer-events: none;
+            /* Prevents the link from being clickable */
+            opacity: 0.5;
+            /* Reduces the opacity to visually indicate the disabled state */
+        }
     </style>
 </head>
 
@@ -242,8 +249,8 @@
                         <div class="flex">
                             <input type="text" placeholder="Coupon code"
                                 class="px-4 py-1 w-40 border border-slate-300 rounded-l-md" id="coupon-code">
-                            <button class="bg-primary text-white px-4 py-1 rounded-r-md"
-                                id="coupon-apply-btn">Apply</button>
+                            <button class="bg-primary text-white px-4 py-1 rounded-r-md" id="coupon-apply-btn"
+                                disabled>Apply</button>
                         </div>
                     </div>
 
@@ -263,22 +270,24 @@
 
 
                             <p class="text-lg font-medium my-1">Total price: <span class="font-normal text-primary"
-                                    id="">00</span><span class="font-normal text-primary">TK</span></p>
+                                    id="total-price">00</span><span class="font-normal text-primary">TK</span></p>
 
 
                             <p class="text-lg font-medium my-1">Discount: <span class="font-normal text-primary"
-                                    id="">00</span><span class="font-normal text-primary">TK</span></p>
+                                    id="discount">00</span><span class="font-normal text-primary">TK</span></p>
 
 
                             <p class="text-lg font-medium my-1">Total: <span class="font-normal text-primary"
-                                    id="">00</span><span class="font-normal text-primary">TK</span></p>
+                                    id="total">00</span><span class="font-normal text-primary">TK</span></p>
                         </div>
                         <hr>
 
                         <!-- cart action button -->
 
                         <!-- The button to open modal -->
-                        <a href="#my_modal_8" class="btn w-full mt-4 capitalize bg-primary text-white hover:text-black rounded-md">Make Purchase</a>
+                        <a href="#my_modal_8"
+                            class="btn w-full mt-4 capitalize bg-primary text-white hover:text-black rounded-md disabled-link">Make
+                            Purchase</a>
 
                         <!-- Put this part before body -->
                         <div class="modal" id="my_modal_8">
@@ -287,7 +296,9 @@
                                 <h3 class="font-bold text-lg">Congratulations</h3>
                                 <p class="py-4">You are Purchased the product</p>
                                 <div class="modal-action flex justify-center">
-                                    <a href="#" class="btn bg-primary text-white capitalize hover:text-black py-1 px-10 rounded-md" id="purchase-btn">Go Home</a>
+                                    <a href="#"
+                                        class="btn bg-primary text-white capitalize hover:text-black py-1 px-10 rounded-md"
+                                        id="purchase-btn">Go Home</a>
                                 </div>
                             </div>
                         </div>
