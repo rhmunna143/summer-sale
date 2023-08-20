@@ -28,3 +28,18 @@ function toSub(num1, num2) {
     return sub;
 }
 
+// to remove class
+function removeClass(elementID, className) {
+    const elementSelect = document.getElementById(elementID);
+    if (elementSelect) {
+        elementSelect.classList.remove(className);
+    }
+}
+
+// to remove attribute
+function removeAttribute(elementID, attributeName) {
+    const elementSelect = document.getElementById(elementID);
+    if (elementSelect) {
+        elementSelect.removeAttribute(attributeName);
+    }
+}
