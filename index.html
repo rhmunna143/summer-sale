@@ -26,7 +26,8 @@
                         clifford: '#da373d',
                         primary: '#E527B2',
                         bg: '#F9F6E2',
-                        back: '',
+                        back: '#F8F8F8;',
+                        pro: '#111111C',
                     }
                 }
             }
@@ -45,23 +46,93 @@
     <header>
         <!-- banner section -->
         <section class="bg-bg">
-            <div class="flex flex-col items-center justify-around content-center lg:w-11/12 mx-auto md:flex-wrap lg:flex-row">
+            <div
+                class="flex flex-col items-center justify-around content-center lg:w-11/12 mx-auto md:flex-wrap lg:flex-row">
                 <div class="description text-center flex-1 p-2">
                     <h5 class="text-xl font-medium mb-7">---SALE FEVER---</h5>
 
-                    <h4 class="text-3xl font-bold">Purchase TK 200 or above & get <span class="text-primary">20% off</span>
+                    <h4 class="text-3xl font-bold">Purchase TK 200 or above & get <span class="text-primary">20%
+                            off</span>
                     </h4>
-    
+
                     <div class="flex items-center gap-2 justify-center mt-7">
                         <p class="text-lg font-medium">Use Promo Code</p>
-                        <button class="btn rounded-md py-0 w-24 h-5 bg-primary text-white text-lg font-medium hover:text-black">SELL200</button>
+                        <button
+                            class="btn rounded-md py-0 w-24 h-5 bg-primary text-white text-lg font-medium hover:text-black">SELL200</button>
                     </div>
                 </div>
-    
+
                 <img class="h-[35rem] w-[35rem]" src="./images/Summer 1.png" alt="">
             </div>
         </section>
     </header>
+
+    <main>
+        <!-- products section -->
+        <section class="bg-back my-12">
+            <!-- products and cart container -->
+            <div>
+                <!-- products cont -->
+                <div>
+                    <!-- products row 1 -->
+                    <div>
+                        <h4 class="text-3xl font-semibold mb-4">Kitchenware</h4>
+
+                        <!-- card 1 -->
+                        <div class="card rounded-md bg-white cursor-pointer" id="product">
+                            <div class="bg-slate-100 m-4 rounded-md">
+                                <figure class="p-4">
+                                    <img src="./images/prod1.png" alt="Shoes" class="rounded-xl" />
+                                </figure>
+                            </div>
+                            <div class="card-body items-center text-center">
+                                <!-- rating -->
+                                <!-- sm -->
+                                <div class="rating rating-sm">
+                                    <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
+                                    <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400"
+                                        checked />
+                                    <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
+                                    <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
+                                    <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
+                                </div>
+
+                                <!-- title -->
+                                <h2 class="text-lg font-semibold" id="">K.Accessories</h2>
+                                <p class="text-lg font-normal text-slate-400"><span id="price">39.00</span>TK</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- products row 2 -->
+                    <div>
+
+                    </div>
+                </div>
+
+                <!-- cart container -->
+                <div>
+                    <!-- for coupons -->
+                    <div>
+
+                    </div>
+
+                    <!-- for cart -->
+                    <div>
+                        <!-- products list -->
+                        <div>
+
+                        </div>
+
+                        <!-- cart calculations -->
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
 
     <script src="./js/utility.js"></script>
